@@ -5,7 +5,11 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "server.js",
+
+  
+
+    "start":"server.js",
+
     "dev": "nodemon server.js"
   },
   "author": "",
