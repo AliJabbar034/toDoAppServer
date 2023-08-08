@@ -4,9 +4,10 @@
 
 
  export const connectDatabase = async ()=>{
+    const Db=process.env.MONGO_URL.replace('<password>', process.env.MONGO_PASS)
   
  try {
-  const {connection}= await mongoose.connect(process.env.MONGO_URL)
+  const {connection}= await mongoose.connect(Db)
 
   console.log(connection.host);
  } catch (error) {
