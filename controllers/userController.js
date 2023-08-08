@@ -3,7 +3,7 @@ import {User} from '../models/users.js';
 import { sendMail } from '../util/sendMail.js';
 import { sendToken } from '../util/sendToken.js';
 import cloudinary from 'cloudinary'
-import fs from 'fs';
+// import fs from 'fs';
 export const register = async(req,res)=>{
     try {
        const {name,email,password}=req.body; 
@@ -27,7 +27,7 @@ export const register = async(req,res)=>{
           folder:"toDoApp"
          })
 
-         fs.rmSync("./tmp",{ recursive :true})
+         // fs.rmSync("./tmp",{ recursive :true})
         
        user =await User.create({name,email ,password,avatar:{
         public_id:myCloud.public_id,
