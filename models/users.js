@@ -17,12 +17,12 @@ const userSchema =new mongoose.Schema({
         required:true,
         minlength:[8,'Password must be at least 8 characters']
     },
-    avatar:{
-        public_id:String,
-        url:String
+    // avatar:{
+    //     public_id:String,
+    //     url:String
     
-    }
-        ,
+    // }
+    //     ,
         created_at:{
             type:Date,
             default:Date.now()
