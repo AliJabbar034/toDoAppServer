@@ -11,7 +11,7 @@ export const register = async(req,res)=>{
 
        // const  avatar=req.files.avatar.tempFilePath;
       
-       if(!name ||!email ||!password ){
+       if(!name ||!email  ){
         return res.status(400).json({msg:"Please fill all the fields"});
        }
 
