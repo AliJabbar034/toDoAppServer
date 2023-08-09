@@ -331,7 +331,7 @@ res.status(200).json({
   }
 }
 
-export const resetPassword=async (req, res) => {
+export const resetPassword=async function(req, res)  {
 
   try {
     const { otp , password }=req.body;
@@ -367,3 +367,10 @@ await  user.save()
   }
 }
 
+export const welcom =async function(req, res)
+{
+  res.status(200).json({
+    succcess:true,
+    message:"Welcome to here..."
+  })
+}

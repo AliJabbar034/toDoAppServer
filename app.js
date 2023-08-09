@@ -2,7 +2,7 @@
 import userRouter from './routers/userRoute.js'
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
-import cors from 'cors'
+import cors from 'cors';
  export const app = express();
  app.use(express.json());
  app.use(cookieParser());
@@ -13,5 +13,7 @@ app.use(fileUpload({
 }))
 
 app.use(cors())
-app.use('*',cors());
+app.use(cors({
+    origin: '*'
+}));
  app.use('/api/v1',userRouter); 

@@ -1,9 +1,9 @@
 import express from 'express';
-import { addTask,  forgetPassword, getMyProfile, logOut, login, register, removeTask, resetPassword, updatePassword, updateProfile, updateTask, verify } from '../controllers/userController.js';
+import { addTask,  forgetPassword, getMyProfile, logOut, login, register, removeTask, resetPassword, updatePassword, updateProfile, updateTask, verify, welcom } from '../controllers/userController.js';
 import { isAuthenticated } from '../middleware/auth.js';
 
 const router = express.Router();
-
+router.route('/').get(welcom);
 router.route('/register').post(register);
 
 router.route('/verify').post(isAuthenticated ,verify)
