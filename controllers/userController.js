@@ -366,8 +366,5 @@ await  user.save()
 
 export const welcom =async function(req, res)
 {
-  res.status(200).json({
-    succcess:true,
-    message:"Welcome to here..."
-  })
+  res.send("helo");
 }

@@ -4,7 +4,6 @@ import { connectDatabase } from "./config/database.js";
 import cloudinary from 'cloudinary'
 
 const port =process.env.PORT || 5000;
-
 config({
     path:'./config/config.env'
 })
