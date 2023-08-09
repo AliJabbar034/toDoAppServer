@@ -253,23 +253,23 @@ export const updateProfile=async function (req, res)  {
  
   try {
     const {name} =req.body;
-   const avatar =req.files.avatar.tempFilePath;
+   // const avatar =req.files.avatar.tempFilePath;
     const user = await User.findById(req.user._id);
  
     
     if(name)   user.name = name;   
-    if(avatar){
-      await cloudinary.v2.uploader.destroy(user.avatar.public_id);
-      const myCloud=await cloudinary.v2.uploader.upload(avatar,{
-        folder:"toDoApp"
-       })
+    // if(avatar){
+    //   await cloudinary.v2.uploader.destroy(user.avatar.public_id);
+    //   const myCloud=await cloudinary.v2.uploader.upload(avatar,{
+    //     folder:"toDoApp"
+    //    })
 
-       fs.rmSync("./tmp",{ recursive :true});
-       user.avatar={
-        public_id:myCloud.public_id,
-        url:myCloud.secure_url
-       }
-    }
+    //    fs.rmSync("./tmp",{ recursive :true});
+    //    user.avatar={
+    //     public_id:myCloud.public_id,
+    //     url:myCloud.secure_url
+    //    }
+    // }
   
     await user.save();
 
