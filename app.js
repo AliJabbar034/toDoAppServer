@@ -13,4 +13,5 @@ app.use(fileUpload({
 }))
 
 app.use(cors())
+app.use('*',cors());
  app.use('/api/v1',userRouter); 
