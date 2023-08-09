@@ -9,7 +9,7 @@
  try {
   const {connection}= await mongoose.connect(Db)
 
-  console.log(connection.host);
+  console.log("Connected to" ,connection);
  } catch (error) {
   
   console.log(error.message);
