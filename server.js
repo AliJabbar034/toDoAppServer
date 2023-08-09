@@ -2,7 +2,7 @@ import { config } from "dotenv";
 import { app } from "./app.js";
 import { connectDatabase } from "./config/database.js";
 import cloudinary from 'cloudinary'
-
+const port =5000
 config({
     path:'./config/config.env'
 })
@@ -14,6 +14,6 @@ cloudinary.config({
 })
 
 await connectDatabase();
-app.listen(process.env.PORT || 5000, ()=>{
-    console.log("Server running on port " + process.env.PORT);
+app.listen(process.env.PORT || port, ()=>{
+    console.log("Server running on port " , port);
 })
