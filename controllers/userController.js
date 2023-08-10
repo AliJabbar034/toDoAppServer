@@ -225,7 +225,7 @@ export const updateProfile = async function (req, res) {
     const user = await User.findById(req.user._id);
 
     if (name) user.name = name;
-    if (avatar) {
+    if (file) {
       await cloudinary.v2.uploader.destroy(user.avatar.public_id);
       const myCloud = await cloudinary.v2.uploader.upload(fileUri.content);
 
